@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Player.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Tools, weapons, and matreal..png" type="Texture" id=2]
+[ext_resource path="res://Actor/Player/Player.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Player GUI.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.4, 0.4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Body" type="Sprite" parent="."]
+self_modulate = Color( 0.14902, 0.72549, 0.376471, 1 )
+scale = Vector2( 0.03, 0.03 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 663, 662 )
+
+[node name="Eyes" type="Sprite" parent="Body"]
+position = Vector2( 0, -33.3335 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 784, 86, 416, 254 )
+
+[node name="Hat" type="Sprite" parent="Body"]
+position = Vector2( 0, -366 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 1 )
+offset = Vector2( 8, 0 )
+region_enabled = true
+region_rect = Rect2( 1378, 69, 729, 322 )
+
+[node name="PlayerItem" type="Position2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="PlayerItem"]
+scale = Vector2( 0.05, 0.05 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 1123, 59, 323, 119 )
+
+[node name="Slots" type="Sprite" parent="."]
+position = Vector2( 0, 100 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 40, 40, 2031, 240 )
+
+[node name="SSlot" type="Sprite" parent="Slots"]
+position = Vector2( -896, 0 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 40, 320, 240, 240 )
